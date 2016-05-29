@@ -63,6 +63,7 @@ public class UserUtils implements InitializingBean {
 
 	@Override
 	public void afterPropertiesSet() throws Exception {
+		config.set("zookeeper.znode.parent", "/hbase-unsecure");
 		admin = new HBaseAdmin(config);
 	}
 
